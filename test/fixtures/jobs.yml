@@ -4,12 +4,14 @@ one:
   user: one
   recipient: one
   template: one
-  status: MyString
-  image_url: MyString
+  created_at: 2016-07-24 02:48:15
+  start_after: 2016-07-24 02:48:15
+  due_by: 2016-07-24 02:48:15
 
 two:
   user: two
   recipient: two
   template: two
-  status: MyString
-  image_url: MyString
+  created_at: 2016-07-24 02:48:15
+  start_after: 2016-07-24 02:48:15
+  due_by: 2016-07-24 02:48:15

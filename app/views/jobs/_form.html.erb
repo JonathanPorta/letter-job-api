@@ -27,13 +27,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
+    <%= f.label :created_at %>
+    <%= f.datetime_select :created_at %>
   </div>
 
   <div class="field">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
+    <%= f.label :start_after %>
+    <%= f.datetime_select :start_after %>
+  </div>
+
+  <div class="field">
+    <%= f.label :due_by %>
+    <%= f.datetime_select :due_by %>
   </div>
 
   <div class="actions">

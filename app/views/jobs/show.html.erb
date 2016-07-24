@@ -16,13 +16,18 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @job.status %>
+  <strong>Created at:</strong>
+  <%= @job.created_at %>
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @job.image_url %>
+  <strong>Start after:</strong>
+  <%= @job.start_after %>
+</p>
+
+<p>
+  <strong>Due by:</strong>
+  <%= @job.due_by %>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |

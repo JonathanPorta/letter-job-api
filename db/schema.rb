@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724010412) do
+ActiveRecord::Schema.define(version: 20160724084838) do
 
   create_table "jobs", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "created_by_id"
+    t.integer  "assigned_to_id"
     t.integer  "recipient_id"
     t.integer  "template_id"
-    t.string   "status"
-    t.string   "image_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "start_after"
+    t.datetime "due_by"
+    t.datetime "updated_at",     null: false
+    t.index ["assigned_to_id"], name: "index_jobs_on_assigned_to_id"
+    t.index ["created_by_id"], name: "index_jobs_on_created_by_id"
     t.index ["recipient_id"], name: "index_jobs_on_recipient_id"
     t.index ["template_id"], name: "index_jobs_on_template_id"
-    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "recipients", force: :cascade do |t|
@@ -30,6 +32,17 @@ ActiveRecord::Schema.define(version: 20160724010412) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "job_id"
+    t.string   "status"
+    t.string   "image_url"
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["job_id"], name: "index_tasks_on_job_id"
   end
 
   create_table "templates", force: :cascade do |t|
