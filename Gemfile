@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'omniauth-google-oauth2'
+gem 'rails_12factor'
+
 gem 'rack-cors'
 
 group :development, :test do
