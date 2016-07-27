@@ -5,7 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Creator</th>
+      <th>Assigne</th>
       <th>Recipient</th>
       <th>Template</th>
       <th>Created at</th>
@@ -18,7 +19,8 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.user %></td>
+        <td><%= job.creator %></td>
+        <td><%= job.assignee %></td>
         <td><%= job.recipient %></td>
         <td><%= job.template %></td>
         <td><%= job.created_at %></td>

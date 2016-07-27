@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :tasks, :edit, :update, :destroy]
 
   # GET /jobs
   # GET /jobs.json
@@ -10,6 +10,11 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+  end
+
+  # GET /jobs/1/tasks - always json, see router
+  def tasks
+    @tasks = @job.tasks
   end
 
   # GET /jobs/new
@@ -69,6 +74,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:user_id, :recipient_id, :template_id, :created_at, :start_after, :due_by)
+      params.require(:job).permit(:created_by_id, :assigned_to_id, :recipient_id, :template_id, :created_at, :start_after, :due_by)
     end
 end

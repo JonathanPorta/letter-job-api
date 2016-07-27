@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :assignments, :creations, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -10,6 +10,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+  end
+
+  # GET /users/1/assignments - always json, see router
+  def assignments
+    @jobs = @user.assignments
+  end
+
+  # GET /users/1/creations - always json, see router
+  def creations
+    @jobs = @user.creations
   end
 
   # GET /users/new
