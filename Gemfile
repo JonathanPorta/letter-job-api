@@ -34,6 +34,7 @@ gem 'omniauth-google-oauth2'
 gem 'rails_12factor'
 
 gem 'rack-cors'
+gem 'draper', '3.0.0.pre1' # There's a missing dep in the latest release
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724093519) do
+ActiveRecord::Schema.define(version: 20160730165220) do
 
   create_table "jobs", force: :cascade do |t|
     t.integer  "created_by_id"
     t.integer  "assigned_to_id"
     t.integer  "recipient_id"
-    t.integer  "template_id"
     t.datetime "created_at",     null: false
     t.datetime "start_after"
     t.datetime "due_by"
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160724093519) do
     t.index ["assigned_to_id"], name: "index_jobs_on_assigned_to_id"
     t.index ["created_by_id"], name: "index_jobs_on_created_by_id"
     t.index ["recipient_id"], name: "index_jobs_on_recipient_id"
-    t.index ["template_id"], name: "index_jobs_on_template_id"
   end
 
   create_table "recipients", force: :cascade do |t|
@@ -44,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160724093519) do
     t.datetime "updated_at",   null: false
     t.string   "title"
     t.text     "description"
+    t.integer  "template_id"
     t.index ["job_id"], name: "index_tasks_on_job_id"
   end
 

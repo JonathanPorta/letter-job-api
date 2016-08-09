@@ -14,7 +14,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/tasks - always json, see router
   def tasks
-    @tasks = @job.tasks
+    @tasks = @job.tasks.decorate
   end
 
   # GET /jobs/new
